@@ -93,11 +93,17 @@ def switch4Handler(evt) {
 def switch5Handler(evt) {
 	log.debug "switch5Handler: $evt.value"
 	if (evt.value == "on5") {
+		//for (i in b2soni) i.play()
+        // i.
+        //setHue(number)
+		//setSaturation(number)
+		//setColor(color_map)
+        //
         Random random = new Random()
         for (i in b2hues){
-            i.setLevel(70+random.nextInt(10))
-			i.setSaturation(60+random.nextInt(10))
-			i.setHue(14+random.nextInt(4))
+            i.setLevel(60+random.nextInt(10))
+			i.setSaturation(60+random.nextInt(20))
+			i.setHue(15+random.nextInt(4))
         }
 	} 
 }
