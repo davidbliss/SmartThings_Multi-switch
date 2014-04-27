@@ -25,6 +25,10 @@ preferences {
 		input "b1soni", "capability.musicPlayer", multiple: true
 	}
     
+    section("Button 2 set colors on these...") {
+		input "b2hues", "capability.colorControl", multiple: true
+	}
+    
     section("Knob dims these...") {
 		input "klights", "capability.switchLevel", multiple: true
 	}
@@ -89,7 +93,12 @@ def switch4Handler(evt) {
 def switch5Handler(evt) {
 	log.debug "switch5Handler: $evt.value"
 	if (evt.value == "on5") {
-		//This switch is not currently doing anything
+        Random random = new Random()
+        for (i in b2hues){
+            i.setLevel(70+random.nextInt(10))
+			i.setSaturation(60+random.nextInt(10))
+			i.setHue(14+random.nextInt(4))
+        }
 	} 
 }
 
